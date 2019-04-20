@@ -1,0 +1,152 @@
+.loader {
+    height: 13vw;
+    display: flex;
+    justify-content: center;
+    margin-left: -30px;
+}
+
+.stick {
+    height: 0;
+    width: 2px;
+    float: left;
+    margin-right: 15px;
+    background: #0A2348;
+    align-self: flex-end;
+    box-shadow: 10px -11px 5px 0px rgba(10,35,72,0.4);
+}
+
+
+@keyframes sequence1 {
+    0% {
+        height: 10px;
+    }
+    50% {
+        height: 10vw;
+    }
+    100% {
+        height: 10px;
+    }
+}
+
+@keyframes sequence2 {
+    0% {
+        height: 20px;
+    }
+    50% {
+        height: 12vw;
+    }
+    100% {
+        height: 20px;
+    }
+}
+
+.stick:nth-child(1) {
+animation: sequence1 1s ease infinite;
+}
+.stick:nth-child(2) {
+animation: sequence2 1s ease infinite 0.1s;
+}
+.stick:nth-child(3) {
+animation: sequence1 1s ease-in-out infinite 0.2s;
+}
+.stick:nth-child(4) {
+animation: sequence2 1s ease-in infinite 0.3s;
+}
+.stick:nth-child(5) {
+animation: sequence1 1s ease-in-out infinite 0.4s;
+}
+.stick:nth-child(6) {
+animation: sequence2 1s ease infinite 0.5s;
+}
+.stick:nth-child(7) {
+animation: sequence1 1s ease-in-out infinite 0.6s;
+}
+.stick:nth-child(8) {
+animation: sequence2 1s ease infinite 0.7s;
+}
+.stick:nth-child(9) {
+animation: sequence1 1s ease-in-out infinite 0.8s;
+}
+.stick:nth-child(10) {
+animation: sequence2 1s ease infinite 0.9s;
+}
+
+
+
+@media only screen and (min-width: 0) and (max-width: 370px){
+    @keyframes sequence1 {
+        0% {
+            height: 10px;
+        }
+        50% {
+            height: 15vw;
+        }
+        100% {
+            height: 10px;
+        }
+    }
+    
+    @keyframes sequence2 {
+        0% {
+            height: 20px;
+        }
+        50% {
+            height: 18vw;
+        }
+        100% {
+            height: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 460px){
+    @keyframes sequence1 {
+        0% {
+            height: 20px;
+        }
+        50% {
+            height: 20vw;
+        }
+        100% {
+            height: 20px;
+        }
+    }
+    
+    @keyframes sequence2 {
+        0% {
+            height: 30px;
+        }
+        50% {
+            height: 18vw;
+        }
+        100% {
+            height: 30px;
+        }
+    }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px){
+    @keyframes sequence1 {
+        0% {
+            height: 30px;
+        }
+        50% {
+            height: 15vw;
+        }
+        100% {
+            height: 30px;
+        }
+    }
+    
+    @keyframes sequence2 {
+        0% {
+            height: 40px;
+        }
+        50% {
+            height: 18vw;
+        }
+        100% {
+            height: 40px;
+        }
+    }
+}

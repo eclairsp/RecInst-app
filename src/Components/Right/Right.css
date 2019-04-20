@@ -1,0 +1,136 @@
+.right {
+    display:  flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #fff;
+}
+
+.right-wrap {
+    font-family: 'Comfortaa', cursive;
+}
+
+.data {
+    opacity: 0;
+    animation: show-late 2s forwards;
+}
+
+.default-text {
+    font-size: 8em;
+    animation: fade-in 2s;
+}
+
+.status-text {
+    text-align: center;
+    font-size: 4em;
+    animation: show 2s infinite;
+}
+
+.sub-text {
+    font-size: 0.5em;
+}
+
+.error-text {
+    font-size: 4em;
+    animation: fade-in 2s;
+}
+
+.elegant-shadow {
+    text-shadow: 
+    0px 14px 10px rgba(0,0,0,0.15),
+    0px 24px 2px rgba(0,0,0,0.1),
+    0px 34px 30px rgba(0,0,0,0.1);  
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes show-late {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 0) and (max-width: 370px){
+    .right {
+        width: 100vw;
+        height: 50vh;
+        border-left: none;
+        border-top: 2px solid #fff;
+    }
+    .default-text {
+        font-size: 2em;
+    }
+    .status-text {
+        text-align: center;
+        font-size: 2em;
+        animation: show 2s infinite;
+    }
+    .sub-text {
+        font-size: 0.5em;
+    }
+    .error-text {
+        font-size: 2em;
+        animation: fade-in 2s;
+    }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 460px){
+    .right {
+        width: 100vw;
+        height: 50vh;
+        border-left: none;
+        border-top: 2px solid #fff;
+    }
+    .default-text {
+        font-size: 3em;
+    }.status-text {
+        text-align: center;
+        font-size: 2em;
+        animation: show 2s infinite;
+    }
+    .sub-text {
+        font-size: 0.5em;
+    }
+    .error-text {
+        font-size: 2em;
+        animation: fade-in 2s;
+    }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px){
+    .right {
+        width: 100vw;
+        height: 50vh;
+        border-left: none;
+        border-top: 2px solid #fff;
+    }
+    .default-text {
+        font-size: 5em;
+    }.status-text {
+        text-align: center;
+        font-size: 3em;
+        animation: show 2s infinite;
+    }
+    .sub-text {
+        font-size: 1em;
+    }
+    .error-text {
+        font-size: 4em;
+        animation: fade-in 2s;
+    }
+}

@@ -1,0 +1,62 @@
+.re {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background-color: #0A2348;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.re:hover {
+    transform: scale(1.1);
+    box-shadow: 43px 31px 96px -9px rgba(0,0,0,0.75);
+    background: #fff;
+} 
+
+.re-icon {
+    height: 3vw;
+    width: 3vw;
+    transition: transform 0.5s ease-in-out;
+}
+
+.re-icon:hover {
+    transform: rotate(360deg)
+}
+
+@media only screen and (min-width: 370px) and (max-width: 460px){
+    .re {
+        width: 15vw;
+        height: 15vw;
+        position: absolute;
+        top: auto;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .re-icon {
+        width: 11vw;
+        height: 11vw;
+    }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px){
+    .re {
+        width: 10vw;
+        height: 10vw;
+        position: absolute;
+        top: auto;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .re-icon {
+        width: 8vw;
+        height: 8vw;
+    }
+}
