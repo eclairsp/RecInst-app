@@ -77,13 +77,26 @@ class App extends Component {
       }
 
       response.json().then((data) => {
-        this.setState({
-          filename : data.filename_server,
-          uploadStatus : false,
-          processingStatus : true,
-          errorWhileFetch : false
-        })
-        this.process()
+        if (data.message == 'extension') {
+			this.setState({
+				errorWhileFetch : true,
+				uploadStatus : false,
+				processingStatus : false,
+				errorFetchMessage : {
+				  'line1' : 'Uh Oh!',
+				  'line2' : 'Cannot Upload',
+				  'line3' : 'Wrong file',
+				  'line4' : 'Check again.'
+				}})
+        } else {
+          	this.setState({
+				filename : data.filename_server,
+				uploadStatus : false,
+				processingStatus : true,
+				errorWhileFetch : false
+        	})
+        	this.process()
+        }
       });
     }).catch((err) => {
         if (err) {
