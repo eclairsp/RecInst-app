@@ -10,6 +10,7 @@ import Refresh from './Components/Refresh/Refresh'
 import Info from './Components/Info/Info'
 import Modal from 'react-responsive-modal'
 import ModalInfo from './Components/ModalInfo/ModalInfo'
+import LeftAudio from './Components/Left/LeftAudio'
 
 class App extends Component {
 
@@ -25,7 +26,9 @@ class App extends Component {
       resultStatus : false,
       errorWhileFetch : false,
       errorFetchMessage : "",
-      result : null
+      result : null,
+      audio: null,
+      playingAudio : false
     };
   }
 
@@ -41,7 +44,8 @@ class App extends Component {
       uploadStatus : false,
       processingStatus : false,
       resultStatus : false,
-      errorWhileFetch: false
+      errorWhileFetch: false,
+      playingAudio: false
     })
   }
 
@@ -77,7 +81,7 @@ class App extends Component {
       }
 
       response.json().then((data) => {
-        if (data.message == 'extension') {
+        if (data.message === 'extension') {
 			this.setState({
 				errorWhileFetch : true,
 				uploadStatus : false,
@@ -93,8 +97,10 @@ class App extends Component {
 				filename : data.filename_server,
 				uploadStatus : false,
 				processingStatus : true,
-				errorWhileFetch : false
-        	})
+        errorWhileFetch : false,
+        audio : "http://localhost:5000/static/" + data.filename_server,
+        playingAudio : true
+          })
         	this.process()
         }
       });
@@ -172,7 +178,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Left message = {this.state.uploadMessage} file = {this.getFile} refresh = {this.refresh} />
+        { this.state.playingAudio && <LeftAudio src = {this.state.audio} message = {this.state.uploadMessage} />}
+        { !this.state.playingAudio && <Left message = {this.state.uploadMessage} file = {this.getFile} refresh = {this.refresh} /> }
         <Refresh refresh = {this.refresh} />
         <Info modal =  {this.onOpenModal} />
         <Modal open = {this.state.openModal} 

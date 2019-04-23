@@ -27,7 +27,19 @@
 
 .tooltip:hover .tooltip-icon {
     transform: scale(1.2);
-} 
+}
+
+@media only screen and (min-width: 0px) and (max-width: 370px){
+    .tooltip {
+        width: 10vw;
+        height: 10vw;
+        right: 15px;
+    }
+    .tooltip-icon {
+        width: 7vw;
+        height: 7vw;
+    }
+}
 
 @media only screen and (min-width: 370px) and (max-width: 460px){
     .tooltip {
@@ -36,8 +48,8 @@
         right: 15px;
     }
     .tooltip-icon {
-        width: 12vw;
-        height: 12vw;
+        width: 11vw;
+        height: 11vw;
     }
 }
 

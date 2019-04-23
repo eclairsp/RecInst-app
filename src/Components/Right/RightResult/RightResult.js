@@ -10,12 +10,12 @@ const RightResult = ({result}) => {
     return (
         <div className="right">
             <div className="right-wrap">
-                <table>
+                <table className="result-table">
                     <tbody>
                         <tr>
                             <td className="tableData"><h3 className="instruName">Electric Guitar</h3></td>
                             <td className="tableData"><img src={elecguitar} className="instrument" alt="electric guitar"/></td>
-                            <td className="tableData"><h3 className="instruName">{result.gel}</h3></td>
+                            <td className="tableData"><h3 className="instruName">{result.gel.toString().split('.')[1].slice(0,5)}</h3></td>
                         </tr>
                         <tr>
                             <td className="tableData"><h3 className="instruName">Acoustic Guitar</h3></td>

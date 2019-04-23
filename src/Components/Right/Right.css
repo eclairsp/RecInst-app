@@ -87,6 +87,10 @@
         font-size: 2em;
         animation: fade-in 2s;
     }
+    .result-table {
+        width: 100vw;
+        height: 60%;
+    }
 }
 
 @media only screen and (min-width: 370px) and (max-width: 460px){
@@ -109,6 +113,10 @@
     .error-text {
         font-size: 2em;
         animation: fade-in 2s;
+    }
+    .result-table {
+        width: 90vw;
+        height: 90%;
     }
 }
 

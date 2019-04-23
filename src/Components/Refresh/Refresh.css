@@ -29,6 +29,22 @@
     transform: rotate(360deg)
 }
 
+@media only screen and (min-width: 0px) and (max-width: 370px){
+    .re {
+        width: 10vw;
+        height: 10vw;
+        position: absolute;
+        top: auto;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .re-icon {
+        width: 7vw;
+        height: 7vw;
+    }
+}
+
 @media only screen and (min-width: 370px) and (max-width: 460px){
     .re {
         width: 15vw;
