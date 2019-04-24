@@ -100,21 +100,21 @@ class LeftAudio extends Component {
               barHeight = (dataArray[i] * 1.5);
 
               if (dataArray[i] > 210){ // pink
-                r = 250
-                g = 0
-                b = 255
+                r = 10
+                g = 35
+                b = 72
               } else if (dataArray[i] > 200){ // yellow
-                r = 250
+                r = 255
                 g = 255
-                b = 0
+                b = 255
               } else if (dataArray[i] > 190){ // yellow/green
-                r = 204
-                g = 255
-                b = 0
+                r = 247
+                g = 102
+                b = 12
               } else if (dataArray[i] > 180){ // blue/green
-                r = 0
-                g = 219
-                b = 131
+                r = 232
+                g = 4
+                b = 133
               } else { // light blue
                 r = 0
                 g = 0
