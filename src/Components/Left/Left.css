@@ -95,6 +95,10 @@
     width: 100%;
 }
 
+.audio:focus {
+    outline: none;
+}
+
 @keyframes go {
     0% {
         transform: translateY(0);

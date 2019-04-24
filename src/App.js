@@ -149,6 +149,7 @@ class App extends Component {
       } 
 
       response.json().then((data) => {
+        console.log(data)
         this.setState({
           processingStatus : false,
           resultStatus: true,
@@ -178,8 +179,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        { this.state.playingAudio && <LeftAudio src = {this.state.audio} message = {this.state.uploadMessage} />}
-        { !this.state.playingAudio && <Left message = {this.state.uploadMessage} file = {this.getFile} refresh = {this.refresh} /> }
+        { this.state.playingAudio && <LeftAudio refresh = {this.refresh} src = {this.state.audio} message = {this.state.uploadMessage} />}
+        { !this.state.playingAudio && <Left refresh = {this.refresh} message = {this.state.uploadMessage} file = {this.getFile} refresh = {this.refresh} /> }
         <Refresh refresh = {this.refresh} />
         <Info modal =  {this.onOpenModal} />
         <Modal open = {this.state.openModal} 
