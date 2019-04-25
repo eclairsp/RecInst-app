@@ -1,47 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './../Right.css'
-import elecguitar from './../../../assets/classes/electric-guitar.svg'
-import guitar from './../../../assets/classes/guitar.svg'
-import organ from './../../../assets/classes/organ.svg'
-import piano from './../../../assets/classes/piano.svg'
-import voice from './../../../assets/classes/voice.svg'
+import TableRow from "./TableRow"
 
-const RightResult = ({result}) => {
-    return (
-        <div className="right">
-            <div className="right-wrap">
-                <table className="result-table">
-                    <tbody>
-                        <tr>
-                            <td className="tableData"><h3 className="instruName">Electric Guitar</h3></td>
-                            <td className="tableData"><img src={elecguitar} className="instrument" alt="electric guitar"/></td>
-                            <td className="tableData"><h3 className="instruName">{result.gel}</h3></td>
-                        </tr>
-                        <tr>
-                            <td className="tableData"><h3 className="instruName">Acoustic Guitar</h3></td>
-                            <td className="tableData"><img src={guitar} className="instrument" alt="acoustic guitar"/></td>
-                            <td className="tableData"><h3 className="instruName">{result.gac}</h3></td>
-                        </tr>
-                        <tr>
-                            <td className="tableData"><h3 className="instruName">Organ</h3></td>
-                            <td className="tableData"><img src={organ} className="instrument" alt="organ"/></td>
-                            <td className="tableData"><h3 className="instruName">{result.org}</h3></td>
-                        </tr>
-                        <tr>
-                            <td className="tableData"><h3 className="instruName">Piano</h3></td>
-                            <td className="tableData"><img src={piano} className="instrument" alt="piano"/></td>
-                            <td className="tableData"><h3 className="instruName">{result.pia}</h3></td>
-                        </tr>
-                        <tr>
-                            <td className="tableData"><h3 className="instruName">Human Voice</h3></td>
-                            <td className="tableData"><img src={voice} className="instrument" alt="voice"/></td>
-                            <td className="tableData"><h3 className="instruName">{result.voi}</h3></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>    
-    );
+class RightResult extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            res : this.props.result,
+            arr : [this.props.result[0].prob, this.props.result[1].prob, this.props.result[2].prob, this.props.result[3].prob, this.props.result[4].prob]
+        };
+    }
+
+    componentDidMount() {
+        this.setState ({
+            arr : this.state.arr.sort((a, b) => parseFloat(b) - parseFloat(a))
+        }, () => console.log(this.state.arr)
+        )
+    }
+
+    render () {
+        console.log(this.state.arr)
+        return (
+                <div className="right">
+                    <div className="right-wrap">
+                        <table className="result-table">
+                            <tbody>
+                                {this.state.arr.map((d, i) => {
+                                    return (
+                                        <TableRow src={this.state.res[i].name} prob={d} />
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>    
+        );
+    }
 }
     
 
